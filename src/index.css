@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Global styles and custom utilities for the portfolio website. This file sets up the base styles for the HTML and body elements, including font, background color, and text color. It also defines custom animations for fading up, blinking, floating, and a slow ping effect that can be used throughout the site to enhance interactivity and visual appeal. Additionally, it includes styles for scrollbars, focus states, and text selection to ensure a consistent and polished user experience across different browsers and devices. */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    background-color: #080810;
+    color-scheme: dark;
+  }
+
+  body {
+    font-family: "Satoshi", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #080810;
+    color: #e2e2f0;
+    cursor: default;
+  }
+
+  a,
+  button,
+  [role="button"],
+  [role="menuitem"],
+  input[type="submit"],
+  input[type="button"],
+  select {
+    cursor: pointer;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    cursor: text;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080810;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #7c3aed;
+    border-radius: 99px;
+  }
+
+  :focus-visible {
+    outline: 2px solid #7c3aed;
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
+
+  ::selection {
+    background: #7c3aed;
+    color: #fff;
+  }
+}
+
+@layer utilities {
+  .animate-fadeUp {
+    animation: fadeUp 0.45s cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+  .animate-blink {
+    animation: blink 1s step-end infinite;
+  }
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+  .animate-ping-slow {
+    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
