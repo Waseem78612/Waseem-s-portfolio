@@ -10,13 +10,8 @@ export default function Footer() {
       role="contentinfo"
     >
       <p className="text-gray-600 text-sm">
-        Built by{" "}
-        <span className="bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent font-semibold">
-          // Using the owner's name from the centralized data file, styled with
-          a gradient
-          {OWNER.name}
-        </span>{" "}
-        · Pakistan 🇵🇰
+        Built by <span className="font-semibold">{OWNER.name}</span> · Pakistan
+        🇵🇰
       </p>
       <p className="text-gray-800 text-xs mt-1">© {new Date().getFullYear()}</p>
     </footer>
